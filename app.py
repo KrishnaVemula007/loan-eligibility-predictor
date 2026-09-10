@@ -305,8 +305,8 @@ with st.container(border=True):
 st.write("")
 
 if st.button("🔍 CHECK LOAN ELIGIBILITY"):
-   if predict:
-       if (
+    
+    if (
         gender is None
         or married is None
         or dependents is None

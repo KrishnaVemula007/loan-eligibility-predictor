@@ -445,7 +445,7 @@ if st.button("🔍 CHECK LOAN ELIGIBILITY"):
             eligible for approval.
         </p>
         </div>
-        """)
+        """,unsafe_allow_html=True)
     if confidence is not None:
         st.metric(
             "Model Confidence",

@@ -184,7 +184,7 @@ with st.container(border=True):
     with col1:
         gender = st.selectbox(
             "Gender",
-            ["Male", "Female"]
+            ["Male", "Female"],
             index=None,
             placeholder="Select Gender"
         )
@@ -192,7 +192,7 @@ with st.container(border=True):
     with col2:
         married = st.selectbox(
             "Married",
-            ["Yes", "No"]
+            ["Yes", "No"],
             index=None,
             placeholder="Select Married Status"
         )
@@ -200,7 +200,7 @@ with st.container(border=True):
     with col3:
         dependents = st.selectbox(
             "Dependents",
-            ["0", "1", "2", "3+"]
+            ["0", "1", "2", "3+"],
             index=None,
             placeholder="Select Dependents"
         )
@@ -218,7 +218,7 @@ with st.container(border=True):
     with col1:
         education = st.selectbox(
             "Education",
-            ["Graduate", "Not Graduate"]
+            ["Graduate", "Not Graduate"],
             index=None,
             placeholder="Select Education"
         )
@@ -226,7 +226,7 @@ with st.container(border=True):
     with col2:
         self_employed = st.selectbox(
             "Self Employed",
-            ["No", "Yes"]
+            ["No", "Yes"],
             index=None,
             placeholder="Select Employement"
         )
@@ -234,7 +234,7 @@ with st.container(border=True):
     with col3:
         credit_history = st.selectbox(
             "Credit History",
-            ["Good", "Poor"]
+            ["Good", "Poor"],
             index=None,
             placeholder="Select Credit History"
         )
@@ -249,7 +249,7 @@ with st.container(border=True):
 
     property_area = st.selectbox(
         "Property Area",
-        ["Urban", "Semiurban", "Rural"]
+        ["Urban", "Semiurban", "Rural"],
         index=None,
         placeholder="Select Property Area"
     )

@@ -433,21 +433,48 @@ if st.button("🔍 CHECK LOAN ELIGIBILITY"):
         )
 
     else:
+        st.markdown("""
+        <div class="reject-box">
+        <div style="font-size:58px;">❌</div>
+        <div class="reject-title">
+            Loan Rejected
+        </div>
+        <p>
+            Based on the information provided,
+            the Machine Learning model predicts
+            that this application may not be
+            eligible for approval.
+        </p>
+        </div>
+        """, unsafe_allow_html=True)
 
-        st.markdown(
-            """
-            <div class="reject-box">
-                <div style="font-size:55px;">❌</div>
-                <h1>Loan Rejected</h1>
-                <p>
-                    The machine learning model predicts that
-                    this application may not be eligible for approval.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        st.subheader("🔎 Possible Factors")
 
+        reasons = []
+
+        if credit_history == "Poor":
+            reasons.append("Poor credit history")
+
+        if total_income < 3000:
+            reasons.append("Low total income")
+
+        if loan_amount > total_income * 0.5:
+            reasons.append("Loan amount is relatively high compared with total income")
+
+        if education == "Not Graduate":
+            reasons.append("Applicant is not a graduate")
+
+        if self_employed == "Yes":
+            reasons.append("Applicant is self-employed")
+
+        if len(reasons) == 0:
+            reasons.append(
+            "The model identified a combination of applicant "
+            "features that resulted in a rejection prediction."
+             )
+
+        for reason in reasons:
+            st.write("•", reason)
     if confidence is not None:
         st.metric(
             "Model Confidence",

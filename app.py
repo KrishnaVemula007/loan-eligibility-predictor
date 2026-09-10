@@ -471,7 +471,7 @@ st.markdown(
         <b>Loan Eligibility Predictor</b><br><br>
         Developed by <b>Krishna Vemula</b><br>
         Contact: krishnavemula7788@gmail.com<br><br>
-        Python • Machine Learning • Random Forest
+        Python | Machine Learning | Random Forest
     </div>
     """
     unsafe_allow_html=True

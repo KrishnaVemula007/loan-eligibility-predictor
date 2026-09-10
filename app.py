@@ -96,7 +96,7 @@ div[data-baseweb="input"] {
 }
 
 input {
-    color: white !important;
+    color: black !important;
 }
 
 /* Button */

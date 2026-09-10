@@ -448,7 +448,7 @@ if st.button("🔍 CHECK LOAN ELIGIBILITY"):
         </div>
         """, unsafe_allow_html=True)
 
-        st.subheader("🔎 Possible Factors")
+        st.subheader("🔎 Reasons")
 
         reasons = []
 

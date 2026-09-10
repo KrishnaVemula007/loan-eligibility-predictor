@@ -185,18 +185,24 @@ with st.container(border=True):
         gender = st.selectbox(
             "Gender",
             ["Male", "Female"]
+            index=None,
+            placeholder="Select Gender"
         )
 
     with col2:
         married = st.selectbox(
             "Married",
             ["Yes", "No"]
+            index=None,
+            placeholder="Select Married Status"
         )
 
     with col3:
         dependents = st.selectbox(
             "Dependents",
             ["0", "1", "2", "3+"]
+            index=None,
+            placeholder="Select Dependents"
         )
 
 
@@ -213,18 +219,24 @@ with st.container(border=True):
         education = st.selectbox(
             "Education",
             ["Graduate", "Not Graduate"]
+            index=None,
+            placeholder="Select Education"
         )
 
     with col2:
         self_employed = st.selectbox(
             "Self Employed",
             ["No", "Yes"]
+            index=None,
+            placeholder="Select Employement"
         )
 
     with col3:
         credit_history = st.selectbox(
             "Credit History",
             ["Good", "Poor"]
+            index=None,
+            placeholder="Select Credit History"
         )
 
 
@@ -238,6 +250,8 @@ with st.container(border=True):
     property_area = st.selectbox(
         "Property Area",
         ["Urban", "Semiurban", "Rural"]
+        index=None,
+        placeholder="Select Property Area"
     )
 
 
@@ -254,16 +268,16 @@ with st.container(border=True):
         applicant_income = st.number_input(
             "Applicant Income",
             min_value=0.0,
-            value=5000.0,
-            step=500.0
+            value=None,
+            placeholder="Enter applicant income"
         )
 
     with col2:
         coapplicant_income = st.number_input(
             "Coapplicant Income",
             min_value=0.0,
-            value=0.0,
-            step=500.0
+            value=None,
+            placeholder="Enter coapplicant income"
         )
 
     col1, col2 = st.columns(2)
@@ -272,16 +286,16 @@ with st.container(border=True):
         loan_amount = st.number_input(
             "Loan Amount",
             min_value=0.0,
-            value=150.0,
-            step=10.0
+            value=None,
+            placeholder="Enter loan amount"
         )
 
     with col2:
         loan_amount_term = st.number_input(
             "Loan Term (Months)",
             min_value=1.0,
-            value=360.0,
-            step=12.0
+            value=None,
+            placeholder="Enter Tenure"
         )
 
 
@@ -291,7 +305,23 @@ with st.container(border=True):
 st.write("")
 
 if st.button("🔍 CHECK LOAN ELIGIBILITY"):
-
+   if predict:
+       if (
+        gender is None
+        or married is None
+        or dependents is None
+        or education is None
+        or self_employed is None
+        or credit_history is None
+        or property_area is None
+        or applicant_income is None
+        or coapplicant_income is None
+        or loan_amount is None
+        or loan_amount_term is None
+    ):
+        st.error("⚠️ Please select or enter all applicant details before predicting.")
+        st.stop()
+        
     # Encoding
 
     gender_value = 1 if gender == "Male" else 0

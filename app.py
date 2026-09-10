@@ -473,6 +473,6 @@ st.markdown(
         Contact: krishnavemula7788@gmail.com<br><br>
         Python | Machine Learning | Random Forest
     </div>
-    """
+    """,
     unsafe_allow_html=True
 )

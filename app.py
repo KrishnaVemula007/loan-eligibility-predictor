@@ -437,14 +437,14 @@ if st.button("🔍 CHECK LOAN ELIGIBILITY"):
         <div class="reject-box">
         <div style="font-size:58px;">❌</div>
         <div class="reject-title">
-            Loan Rejected
-        </div>
+            <h1>Loan Rejected</h1>
         <p>
             Based on the information provided,
             the Machine Learning model predicts
             that this application may not be
             eligible for approval.
         </p>
+        </div>
         """)
     if confidence is not None:
         st.metric(
